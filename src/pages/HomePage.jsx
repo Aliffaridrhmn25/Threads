@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import ThreadsList from "../components/ThreadsList";
 import asyncPopulateUsersAndThreads from "../states/shared/action";
 import { asyncUpVoteThread, asyncDownVoteThread, asyncNeturalizeVoteThread } from "../states/threads/action";
+import Container from "../components/styled/container";
 
 function HomePage() {
   const dispatch = useDispatch();
@@ -33,14 +34,14 @@ function HomePage() {
   }));
 
   return (
-    <div className="homePageWrapper">
+    <Container>
       <div className="wrapper">
         <div className="addThreads">
           <Link to="/new">Tambah Threads</Link>
         </div>
         <ThreadsList threads={threadList} upVote={onUpVoteThread} downVote={onDownVoteThread} neturalizeVote={onNeturalizeVoteThread} />
       </div>
-    </div>
+    </Container>
   );
 }
 

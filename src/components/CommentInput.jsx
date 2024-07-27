@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import useInput from "../hooks/useInput";
+import Button from "./styled/button";
 
 export default function CommentInput({ addComment }) {
   const [comment, onCommentChange, setComment] = useInput("");
@@ -18,9 +19,9 @@ export default function CommentInput({ addComment }) {
       <h1>Beri Komentar</h1>
       <form onSubmit={onCommentSubmit}>
         <textarea id="outlined-multiline-flexible" rows="4" style={{ width: "100%" }} value={comment} onChange={onCommentChange} />
-        <button type="submit" style={{ marginTop: "10px" }}>
+        <Button type="submit" style={{ marginTop: "10px" }}>
           Kirim
-        </button>
+        </Button>
       </form>
     </div>
   );

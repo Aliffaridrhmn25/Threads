@@ -3,6 +3,7 @@ import { useDispatch } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import RegisterInput from "../components/RegisterInput";
 import { asyncRegisterUser } from "../states/users/action";
+import Container from "../components/styled/container";
 
 function RegisterPage() {
   const dispatch = useDispatch();
@@ -23,7 +24,7 @@ function RegisterPage() {
   };
 
   return (
-    <div className="registerPageWrapper">
+    <Container>
       <h1>Create Your Account 👋 </h1>
       <RegisterInput register={onRegister} />
       <h3>
@@ -31,7 +32,7 @@ function RegisterPage() {
         {" "}
         <Link to="/login">Login</Link>
       </h3>
-    </div>
+    </Container>
   );
 }
 

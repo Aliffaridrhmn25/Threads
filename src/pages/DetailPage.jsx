@@ -16,6 +16,7 @@ import {
 import ThreadDetail from "../components/ThreadDetail";
 import CommentInput from "../components/CommentInput";
 import CommentList from "../components/CommentList";
+import Container from "../components/styled/container";
 
 export default function DetailPage() {
   const dispatch = useDispatch();
@@ -60,12 +61,12 @@ export default function DetailPage() {
   }
 
   return (
-    <div className="detail-page-wrapper">
+    <Container>
       <ThreadDetail {...threadDetail} authUser={authUser.id} upVoteThreadDetail={onUpVoteThreadDetail} downVoteThreadDetail={onDownVoteThreadDetail} neturalizeVoteThreadDetail={onNeturalizeVoteThreadDetail} />
       <div className="commentContent">
         <CommentInput addComment={onCommentSubmit} />
         <CommentList comments={threadDetail.comments} authUser={authUser.id} upVoteComment={onUpVoteComment} downVoteComment={onDownVoteComment} neturalizeVoteComment={onNeturalizeVoteComment} />
       </div>
-    </div>
+    </Container>
   );
 }

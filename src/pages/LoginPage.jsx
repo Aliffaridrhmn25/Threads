@@ -3,6 +3,7 @@ import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import LoginInput from "../components/LoginInput";
 import { authThunks } from "../states/authUser/action";
+import Container from "../components/styled/container";
 
 function LoginPage() {
   const dispatch = useDispatch();
@@ -12,7 +13,7 @@ function LoginPage() {
   };
 
   return (
-    <div className="loginPageWrapper">
+    <Container>
       <div>
         <h2>Welcome 🔥</h2>
       </div>
@@ -23,7 +24,7 @@ function LoginPage() {
           <Link to="/register">Register</Link>
         </h3>
       </div>
-    </div>
+    </Container>
   );
 }
 

@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { asyncCreateThread } from "../states/threads/action";
 import ThreadInput from "../components/ThreadInput";
+import Container from "../components/styled/container";
 
 export default function AddThreadPage() {
   const dispatch = useDispatch();
@@ -13,10 +14,10 @@ export default function AddThreadPage() {
     navigate("/");
   };
   return (
-    <div>
+    <Container>
       <h1>Buat Thread Baru</h1>
 
       <ThreadInput addThread={onAddThread} />
-    </div>
+    </Container>
   );
 }

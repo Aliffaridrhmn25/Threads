@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import useInput from "../hooks/useInput";
+import Button from "./styled/button";
 
 export default function RegisterInput({ register }) {
   const [name, onNameChange] = useInput("");
@@ -23,7 +24,7 @@ export default function RegisterInput({ register }) {
       <input type="email" value={email} placeholder="Email" onChange={onEmailChange} />
       <input type="password" value={password} placeholder="Password" onChange={onPasswordChange} />
       <input type="password" value={confirmPassword} placeholder="Confirm Password" onChange={onConfirmPasswordChange} />
-      <button type="submit">Register</button>
+      <Button type="submit">Register</Button>
     </form>
   );
 }
