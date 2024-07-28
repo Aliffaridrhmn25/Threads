@@ -4,6 +4,7 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
+    "ci:test": "vitest run",
     "dev": "vite",
     "test": "vitest",
     "e2e": "cypress run",
