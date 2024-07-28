@@ -12,10 +12,10 @@ export default function asyncPopulateUsersAndThreads() {
 
       dispatch(receiveUsersActionCreator(users));
       dispatch(receiveThreadsActionCreator(threads));
+      dispatch(hideLoading());
     } catch (error) {
       alert(error.message);
-    } finally {
-      dispatch(hideLoading());
     }
+    dispatch(hideLoading());
   };
 }

@@ -1,7 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
 import useInput from "../hooks/useInput";
-import Button from "./styled/button";
 
 function LoginInput({ login }) {
   const [email, onEmailChange] = useInput("");
@@ -11,9 +10,9 @@ function LoginInput({ login }) {
     <form action="registerInput">
       <input type="email" id="email" value={email} placeholder="Email" onChange={onEmailChange} />
       <input type="password" id="password" value={password} placeholder="Password" onChange={onPasswordChange} />
-      <Button type="button" onClick={() => login({ email, password })}>
+      <button type="button" onClick={() => login({ email, password })}>
         Login
-      </Button>
+      </button>
     </form>
   );
 }

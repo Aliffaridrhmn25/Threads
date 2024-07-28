@@ -100,6 +100,7 @@ function asyncReceiveThreadDetail(threadId) {
 
 function asyncUpVoteThreadDetail() {
   return async (dispatch, getState) => {
+    dispatch(showLoading());
     const { threadDetail, authUser } = getState();
     dispatch(upVoteThreadDetailActionCreator(authUser.id));
     try {
@@ -107,10 +108,12 @@ function asyncUpVoteThreadDetail() {
     } catch (error) {
       alert(error.message);
     }
+    dispatch(hideLoading());
   };
 }
 function asyncDownVoteThreadDetail() {
   return async (dispatch, getState) => {
+    dispatch(showLoading());
     const { threadDetail, authUser } = getState();
     dispatch(downVoteThreadDetailActionCreator(authUser.id));
     try {
@@ -118,11 +121,13 @@ function asyncDownVoteThreadDetail() {
     } catch (error) {
       alert(error.message);
     }
+    dispatch(hideLoading());
   };
 }
 
 function asyncNeutralizeVoteThreadDetail() {
   return async (dispatch, getState) => {
+    dispatch(showLoading());
     const { threadDetail, authUser } = getState();
     dispatch(neutralizeVoteThreadDetailActionCreator(authUser.id));
     try {
@@ -130,6 +135,7 @@ function asyncNeutralizeVoteThreadDetail() {
     } catch (error) {
       alert(error.message);
     }
+    dispatch(hideLoading());
   };
 }
 
@@ -152,6 +158,7 @@ function asyncCreateComment({ content }) {
 
 function asyncUpVoteComment(commentId) {
   return async (dispatch, getState) => {
+    dispatch(showLoading());
     const { authUser, threadDetail } = getState();
     dispatch(upVoteCommentActionCreator(commentId, authUser.id));
     try {
@@ -159,11 +166,13 @@ function asyncUpVoteComment(commentId) {
     } catch (error) {
       alert(error.message);
     }
+    dispatch(hideLoading());
   };
 }
 
 function asyncDownVoteComment(commentId) {
   return async (dispatch, getState) => {
+    dispatch(showLoading());
     const { authUser, threadDetail } = getState();
     dispatch(downVoteCommentActionCreator(commentId, authUser.id));
     try {
@@ -171,11 +180,13 @@ function asyncDownVoteComment(commentId) {
     } catch (error) {
       alert(error.message);
     }
+    dispatch(hideLoading());
   };
 }
 
 function asyncNeutralizeVoteComment(commentId) {
   return async (dispatch, getState) => {
+    dispatch(showLoading());
     const { authUser, threadDetail } = getState();
     dispatch(neutralizeVoteCommentActionCreator(commentId, authUser.id));
     try {
@@ -183,6 +194,7 @@ function asyncNeutralizeVoteComment(commentId) {
     } catch (error) {
       alert(error.message);
     }
+    dispatch(hideLoading());
   };
 }
 

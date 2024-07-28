@@ -72,6 +72,7 @@ function asyncCreateThread({ title, body, category }) {
 
 function asyncUpVoteThread(threadId) {
   return async (dispatch, getState) => {
+    dispatch(showLoading());
     const { authUser } = getState();
     dispatch(upVoteThreadActionCreator({ threadId, userId: authUser.id }));
     try {
@@ -79,12 +80,14 @@ function asyncUpVoteThread(threadId) {
     } catch (error) {
       alert(error.message);
       dispatch(downVoteThreadActionCreator({ threadId, userId: authUser.id }));
+      dispatch(hideLoading());
     }
   };
 }
 
 function asyncDownVoteThread(threadId) {
   return async (dispatch, getState) => {
+    dispatch(showLoading());
     const { authUser } = getState();
     dispatch(downVoteThreadActionCreator({ threadId, userId: authUser.id }));
     try {
@@ -92,12 +95,14 @@ function asyncDownVoteThread(threadId) {
     } catch (error) {
       alert(error.message);
       dispatch(downVoteThreadActionCreator({ threadId, userId: authUser.id }));
+      dispatch(hideLoading());
     }
   };
 }
 
 function asyncNeturalizeVoteThread(threadId) {
   return async (dispatch, getState) => {
+    dispatch(showLoading());
     const { authUser } = getState();
     dispatch(
       neturalizeVoteThreadActionCreator({ threadId, userId: authUser.id }),
@@ -109,6 +114,7 @@ function asyncNeturalizeVoteThread(threadId) {
       dispatch(
         neturalizeVoteThreadActionCreator({ threadId, userId: authUser.id }),
       );
+      dispatch(hideLoading());
     }
   };
 }
