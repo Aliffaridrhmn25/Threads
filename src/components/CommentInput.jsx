@@ -17,9 +17,9 @@ export default function CommentInput({ addComment }) {
   return (
     <div>
       <h1>Beri Komentar</h1>
-      <form onSubmit={onCommentSubmit}>
+      <form>
         <textarea id="outlined-multiline-flexible" rows="4" style={{ width: "100%" }} value={comment} onChange={onCommentChange} />
-        <Button type="submit" style={{ marginTop: "10px" }}>
+        <Button type="button" onClick={onCommentSubmit} style={{ marginTop: "10px" }}>
           Kirim
         </Button>
       </form>

@@ -19,12 +19,14 @@ export default function RegisterInput({ register }) {
   };
 
   return (
-    <form action="registerInput" onSubmit={handleRegister}>
+    <form action="registerInput">
       <input type="text" value={name} placeholder="Name" onChange={onNameChange} />
       <input type="email" value={email} placeholder="Email" onChange={onEmailChange} />
       <input type="password" value={password} placeholder="Password" onChange={onPasswordChange} />
       <input type="password" value={confirmPassword} placeholder="Confirm Password" onChange={onConfirmPasswordChange} />
-      <Button type="submit">Register</Button>
+      <Button type="button" onClick={handleRegister}>
+        Register
+      </Button>
     </form>
   );
 }
