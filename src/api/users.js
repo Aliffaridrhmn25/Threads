@@ -1,3 +1,5 @@
+/* eslint-disable indent */
+/* eslint-disable quotes */
 // src/api/users.js
 import { get, BASE_URL } from './api';
 

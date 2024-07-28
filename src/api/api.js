@@ -1,3 +1,4 @@
+/* eslint-disable indent */
 // src/api/api.js
 
 const BASE_URL = "https://forum-api.dicoding.dev/v1";
@@ -56,4 +57,6 @@ async function del(url, options = {}) {
     return handleResponse(response);
 }
 
-export { get, post, put, del, BASE_URL };
+export {
+    get, post, put, del, BASE_URL,
+};

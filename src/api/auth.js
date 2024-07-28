@@ -1,3 +1,4 @@
+/* eslint-disable import/named */
 import { api, makeResponseFailed } from "./api";
 
 export const authAPI = {

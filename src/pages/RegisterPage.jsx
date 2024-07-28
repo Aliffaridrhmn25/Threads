@@ -1,3 +1,5 @@
+/* eslint-disable object-curly-newline */
+/* eslint-disable comma-dangle */
 /* eslint-disable react/jsx-one-expression-per-line */
 import React from "react";
 import { useDispatch } from "react-redux";
